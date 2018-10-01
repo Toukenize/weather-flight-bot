@@ -43,12 +43,13 @@ In terms of words representation, I tried word encoding (one-hot sparse vector) 
 
 Upon several iterations of modelling, I realize that the model could only identify cities that it was trained on (e.g. Boston, Denver). 
 
-![image](https://user-images.githubusercontent.com/43180977/45965238-8d005900-c05a-11e8-8749-4a412033786e.png)
+![image](https://user-images.githubusercontent.com/43180977/46292281-11a32800-c5c3-11e8-8b88-b21f4a4fd6b3.png)
+###### Figure 1 – Outputs for similar sequences with seen cities (above) and unseen cities (below)
 
 To tackle this, I modified the ATIS data by making use of a list of top 100 most visited cities (which consists of a variety of cities across the world) and randomly paired them with the original data (both flight intent and non-flight intent), to obtain a new set of data. The outcome was a pleasant surprise! 
 
-![image](https://user-images.githubusercontent.com/43180977/45965352-d0f35e00-c05a-11e8-877f-46e64ab25145.png)
-
+![image](https://user-images.githubusercontent.com/43180977/46292306-2aabd900-c5c3-11e8-9779-b4295062990f.png)
+###### Figure 2 – Outputs for similar sequences with seen (green) and unseen (red) cities
 
 ## Weather Data
 
@@ -70,7 +71,8 @@ A total of 3,600 data (1,200 of each intent) were used to train and validate the
 
 For both the intent and label model, the stacked LSTM and CNN model did the best, but with slightly different configuration, as shown below:
 
-![image](https://user-images.githubusercontent.com/43180977/45965454-16b02680-c05b-11e8-9a34-db2f65dbf793.png)
+![image](https://user-images.githubusercontent.com/43180977/46292325-3a2b2200-c5c3-11e8-9222-a52f6ae5f76d.png)
+###### Figure 3 – Intent Model Architecture (Left), Label Model Architecture (Right)
 
 Both of my models scored more than 99% in their respective test and validation accuracies. In other words, the models probably maxed out in terms of performance, with respect to the small data set I fed in. Thus, I did not do any hyperparameter tuning for this project. 
 
@@ -93,11 +95,10 @@ Despite the limitation, I think the model managed a good job that can handle bot
 ## How To Run the Model?
 
 1. Clone the repository (or download and unzip them to the same directory)
-2. Create a new environment (python 3.6) and install the requirements.txt among my files. In my case, I use Anaconda on windows, so these are my steps:
-	 -conda create --name newenv python=3.6
-	 -activate newenv
-	 -pip install -r requirements.txt
-3. Run the program “Intent_Detection_Model.py”. 
-**Make sure “glove-wiki-gigaword-300.txt”, “lstm_intent.h5” and “lstm_label.h5” are in the same directory.**
-	 - python -m Intent_Detection_Model.py
-4. Input your queries and you should see the predicted intent!
+2. Create a new environment (python 3.6) and install the **requirements.txt**. Follow these if you use Anaconda on windows:
+   - *conda create --name newenv python=3.6
+   - activate newenv
+   - pip install -r requirements.txt*
+3. Run the program **Intent_Detection_Model.py**.
+   - *python -m Intent_Detection_Model.py*
+4. Input your queries and you should see the magic!
