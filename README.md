@@ -43,7 +43,7 @@ In terms of words representation, I tried word encoding (one-hot sparse vector) 
 
 Upon several iterations of modelling, I realize that the model could only identify cities that it was trained on (e.g. Boston, Denver). 
 
-![image](https://user-images.githubusercontent.com/43180977/46292281-11a32800-c5c3-11e8-8b88-b21f4a4fd6b3.png)
+![image](https://user-images.githubusercontent.com/43180977/46293102-18329f00-c5c5-11e8-9ace-084b64724d2d.png)
 ###### Figure 1 – Outputs for similar sequences with seen cities (above) and unseen cities (below)
 
 To tackle this, I modified the ATIS data by making use of a list of top 100 most visited cities (which consists of a variety of cities across the world) and randomly paired them with the original data (both flight intent and non-flight intent), to obtain a new set of data. The outcome was a pleasant surprise! 
