@@ -95,10 +95,11 @@ Despite the limitation, I think the model managed a good job that can handle bot
 ## How To Run the Model?
 
 1. Clone the repository (or download and unzip them to the same directory)
-2. Create a new environment (python 3.6) and install the **requirements.txt**. Follow these if you use Anaconda on windows:
-   - *conda create --name newenv python=3.6
-   - activate newenv
-   - pip install -r requirements.txt*
-3. Run the program **Intent_Detection_Model.py**.
+2. Download the GloVe (get the glove-wiki-gigaword-300.txt version) from [NLP Stanford](https://nlp.stanford.edu/projects/glove/) or [my GDrive](https://drive.google.com/open?id=19Nt4a5l1U8Oa2YJV5K_yDuilY8OXltLB). Make sure you rename it to **glove-wiki-gigaword-300.txt** and move it to the same directory as the remaining files) or my program won't work.
+3. Create a new environment (python 3.6) and install the **requirements.txt**. Follow these if you use Anaconda on windows:
+   - *conda create --name newenv python=3.6*
+   - *activate newenv*
+   - *pip install -r requirements.txt*
+4. Run the program **Intent_Detection_Model.py**.
    - *python -m Intent_Detection_Model.py*
-4. Input your queries and you should see the magic!
+5. Input your queries and you should see the magic!
